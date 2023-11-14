@@ -52,5 +52,10 @@ pipeline{
                 sh 'docker build -t myaddressbook .'
             }
         }
+	      stage('Deploy container'){
+            steps{
+                sh 'docker run -d -P yashsi08/myaddressbook'
+            }
+        }
       }
 }
